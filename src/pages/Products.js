@@ -13,7 +13,7 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   secDiv: {
-    padding: "0 auto",
+    // padding: "0 auto",
     display: "flex",
     justifyContent: "center",
     backgroundColor: "#f5f5f5",
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     /* width:95%; */
   },
   heading: {
-    marginTop: "1rem",
+    marginTop: "2rem",
     fontFamily: "Montserrat, sans-serif",
     fontSize: "2.5rem",
     fontWeight: "500",
@@ -51,7 +51,7 @@ const Products = () => {
     getData();
 
     console.log("ascdasef", data);
-  }, []);
+  }, [data]);
 
   const changeHandler = (e) => {
     setCategoryList(e.target.value);

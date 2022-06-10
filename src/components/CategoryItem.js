@@ -1,16 +1,66 @@
 import React from 'react';
-import classes from './CategoryItem.module.css';
 import louis from '../assets/images/louis.png'
+import { Button, Grid, makeStyles, Typography } from '@material-ui/core';
+
+
+const useStyles = makeStyles((theme)=>({
+  category : {
+    height: "80vh",
+    width: "30vw",
+    margin: "2rem 0.5rem",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    [`@media screen and (max-width:899px)`]:{
+     height:'50vh',
+    },
+    [`@media screen and (max-width:768px)`]:{
+      width:'90%',
+      height:'70vh',
+     },
+    
+    "&:hover":{
+      
+    },
+    /* flex-direction:column; */
+  },
+  categoryImg : {
+    width:"100%",
+    height: "100%",
+    objectFit: "cover",
+  },
+  overlayCtn : {
+    display:"flex",
+    flexDirection:"column",
+    alignItems: "center",
+    justifyContent:"center",
+    position:"absolute",
+    color:"bisque",
+  },
+categoryBtn : {
+  padding: "0.725rem 1rem",
+  background: "teal",
+  color: "#fff",
+  textAlign: "center",
+  fontSize: "1rem",
+},
+}))
+
+
 const CategoryItem = (props) => {
+
+
+
+  const classes = useStyles()
   return (
     <>
-    <div className={classes.category}>
+    <Grid className={classes.category}>
     <img src={louis} alt='Banner' className={classes.categoryImg} />
-    <div className={classes.overlayCtn}>
-    <h1>{props.category}</h1>
-    <div className={classes.categoryBtn}>Shop Now</div>
-    </div>
-    </div>
+    <Grid className={classes.overlayCtn}>
+    <Typography style={{fontSize:"2rem", fontWeight:'600'}}>{props.category}</Typography>
+    <Button className={classes.categoryBtn}>Shop Now</Button>
+    </Grid>
+    </Grid>
     </>
   )
 }

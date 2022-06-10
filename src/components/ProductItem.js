@@ -8,7 +8,7 @@ productItem:{
   flexDirection:'column',
   height:"400px",
   width:"55vh",
-  margin:'0.5rem',
+  margin:'2rem 0.5rem 0rem 0.5rem',
   [`@media screen and (min-width:768px)`]:{
   '&:hover':{
     boxShadow: "5px 5px 8px 8px #d3d3d3",
