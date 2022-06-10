@@ -9,13 +9,14 @@ productItem:{
   height:"400px",
   width:"55vh",
   margin:'2rem 0.5rem 0rem 0.5rem',
-  [`@media screen and (min-width:768px)`]:{
   '&:hover':{
     boxShadow: "5px 5px 8px 8px #d3d3d3",
   },
+[`@media screen and (min-width:1150px)`]:{
+  width:'45vh'
 },
-[`@media screen and (max-width:768px)`]:{
-  // boxShadow: "5px 5px 8px 5px #d3d3d3",
+[`@media screen and (max-width:625px)`]:{
+  width:'90%'
 },
 },
 imgDiv:{

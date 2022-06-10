@@ -107,7 +107,7 @@ const HomePage = () => {
         PRODUCTS
       </Typography>
       <Grid className={classes.mappedData}>
-        {productData.slice(0,9).map((item)=>(
+        {productData.slice(0,8).map((item)=>(
           <ProductItem
           key={item.id}
             price={item.price}
