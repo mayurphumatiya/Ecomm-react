@@ -1,13 +1,36 @@
-import React,{ useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import louis from "../assets/images/louis.png";
+import nike from "../assets/images/nike.jpg";
+import sony from "../assets/images/sony.jpg";
 import CategoryItem from "../components/CategoryItem";
-import CategoryOutlinedIcon from '@material-ui/icons/CategoryOutlined';
-import { Box, Grid, makeStyles, Typography } from "@material-ui/core";
+import CategoryOutlinedIcon from "@material-ui/icons/CategoryOutlined";
+import {
+  Grid,
+  Box,
+  makeStyles,
+  Typography,
+} from "@material-ui/core";
 import ProductItem from "../components/ProductItem";
 import { fetchProductData } from "../store/Product-actions";
-import ArrowForwardRoundedIcon from '@material-ui/icons/ArrowForwardRounded';
+import ArrowForwardRoundedIcon from "@material-ui/icons/ArrowForwardRounded";
 import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
 import { useNavigate } from "react-router-dom";
+import Carousel from "react-material-ui-carousel";
+
+const slideImages = [
+  {
+    id: "i1",
+    url: "/static/media/louis.47608225783456b4c9f9.png",
+  },
+  {
+    id: "i2",
+    url: "/static/media/nike.ceb00524834295fa6bc4.jpg",
+  },
+  {
+    id: "i3",
+    url: "/static/media/sony.244ee40c95e86b035d63.jpg",
+  },
+];
 
 const useStyles = makeStyles((theme) => ({
   secDiv: {
@@ -25,10 +48,15 @@ const useStyles = makeStyles((theme) => ({
       height: "40vh",
     },
   },
-  greyDiv:{
-    height:'2rem',
-    width:'100%',
-    backgroundColor:'#f5f5f5',
+  greyDiv: {
+    height: "2rem",
+    width: "100%",
+    backgroundColor: "#f5f5f5",
+  },
+  poster: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
   },
   heading: {
     margin: "2rem 0rem",
@@ -37,26 +65,28 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "500",
     paddingLeft: "auto",
     textAlign: "center",
+    [`@media screen and (max-width:899px)`]: {
+      margin: "0.5rem 0rem",
+    },
   },
-  mappedData:{
-    display: "flex", justifyContent: "center", flexWrap: "wrap", backgroundColor:'#f5f5f5'
+  mappedData: {
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    backgroundColor: "#f5f5f5",
   },
-  poster: {
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-  },
-  moreProducts:{
+
+  moreProducts: {
     margin: "2rem 0rem",
     fontFamily: "Montserrat, sans-serif",
     fontSize: "2rem",
     fontWeight: "500",
     textAlign: "center",
-    cursor:'pointer',
-    transition:'font-size 0.5s',
-    '&:hover':{
-      fontSize:"2.5rem",
-      textDecoration:'underline',
+    cursor: "pointer",
+    transition: "font-size 0.5s",
+    "&:hover": {
+      fontSize: "2.5rem",
+      textDecoration: "underline",
     },
   },
 }));
@@ -67,8 +97,17 @@ const DUMMY_DATA = [
   { id: "b3", img: { louis }, category: "Electronics" },
 ];
 
+const Item = (img) => {
+  console.log(img);
+  return <img src={img.img} alt="carousel img" style={{ 
+    width: "100%",
+    height: "100%",
+    objectFit: "fill",
+  }} />;
+};
+
 const HomePage = () => {
-  const [productData, setProductData] = useState([])
+  const [productData, setProductData] = useState([]);
   const navigate = useNavigate();
 
   const getData = async () => {
@@ -76,24 +115,27 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-  getData();
-  console.log(productData,"productsData")
-  }, [productData])
-  
+    getData();
+    console.log(productData, "productsData");
+  }, []);
 
-
-
+  console.log(louis);
   const classes = useStyles();
   return (
     <Grid className={classes.secDiv}>
-      <Grid className={classes.banner}>
-        <img src={louis} alt="poster" className={classes.poster} />
-      </Grid>
+      {/* <Grid className={classes.banner}> */}
+        <Carousel className={classes.banner}>
+          {slideImages.map((item) => (
+            <Item className={classes.poster} key={item.id} img={item.url} />
+          ))}
+        </Carousel>
+        {/* <img src={louis} alt="poster" className={classes.poster} /> */}
+      {/* </Grid> */}
       <Box className={classes.greyDiv}></Box>
-      <Typography className={classes.heading}><CategoryOutlinedIcon fontSize="large"/> CATEGORIES</Typography>
-      <Grid
-        className={classes.mappedData}
-      >
+      <Typography className={classes.heading}>
+        <CategoryOutlinedIcon fontSize="large" /> CATEGORIES
+      </Typography>
+      <Grid className={classes.mappedData}>
         {DUMMY_DATA.map((item) => (
           <CategoryItem
             key={item.id}
@@ -107,18 +149,28 @@ const HomePage = () => {
         PRODUCTS
       </Typography>
       <Grid className={classes.mappedData}>
-        {productData.slice(0,8).map((item)=>(
+        {productData.slice(0, 8).map((item) => (
           <ProductItem
-          key={item.id}
+            key={item.id}
             price={item.price}
             title={item.title}
             description={item.description}
             image={item.image}
-            rating={item.rating.rate} />
-          ))}
+            rating={item.rating.rate}
+          />
+        ))}
       </Grid>
-      <Box className={classes.greyDiv} style={{height:"7rem", color:'teal'}}><Typography className={classes.moreProducts} onClick={()=>navigate('/products')}>SHOW MORE PRODUCTS <ArrowForwardRoundedIcon fontSize="medium"/></Typography></Box>
-      
+      <Box
+        className={classes.greyDiv}
+        style={{ height: "7rem", color: "teal" }}
+      >
+        <Typography
+          className={classes.moreProducts}
+          onClick={() => navigate("/products")}
+        >
+          SHOW MORE PRODUCTS <ArrowForwardRoundedIcon fontSize="medium" />
+        </Typography>
+      </Box>
     </Grid>
   );
 };

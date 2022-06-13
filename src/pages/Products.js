@@ -51,7 +51,7 @@ const Products = () => {
     getData();
 
     console.log("ascdasef", data);
-  }, [data]);
+  }, []);
 
   const changeHandler = (e) => {
     setCategoryList(e.target.value);

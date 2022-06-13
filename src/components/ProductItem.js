@@ -25,7 +25,7 @@ height:"200px",
 display:'flex',
 justifyContent:'center',
 alignItems:'center',
-borderBottom:"1px solid #000",
+borderBottom:"1px solid #cecece",
 },
 productImg:{
   width:"50%",
