@@ -74,7 +74,11 @@ const Products = () => {
         Products
       </Typography>
       <FormControl>
-        <Typography style={{fontFamily:"Montserrat, sans-serif", fontWeight:'500'}}>Categories :-</Typography>
+        <Typography
+          style={{ fontFamily: "Montserrat, sans-serif", fontWeight: "500" }}
+        >
+          Categories :-
+        </Typography>
         <Select
           variant="outlined"
           value={categoryList}

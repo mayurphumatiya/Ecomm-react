@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
-import louis from "../assets/images/louis.png";
-import nike from "../assets/images/nike.jpg";
-import sony from "../assets/images/sony.jpg";
 import CategoryItem from "../components/CategoryItem";
 import { Fade } from "react-slideshow-image";
+import sony from "../assets/images/sony.jpg";
+import shoes from "../assets/images/shoes.png";
+import mainBanner from "../assets/images/mainBanner.png";
+import pcSetup from "../assets/images/pcSetup.jpg";
+import mensFashion from "../assets/images/mensFashion.png";
+import womensFashion from "../assets/images/womensFashion.png";
 import "react-slideshow-image/dist/styles.css";
 import CategoryOutlinedIcon from "@material-ui/icons/CategoryOutlined";
-import {
-  Grid,
-  Box,
-  makeStyles,
-  Typography,
-} from "@material-ui/core";
+import { Grid, Box, makeStyles, Typography } from "@material-ui/core";
 import ProductItem from "../components/ProductItem";
 import { fetchProductData } from "../store/Product-actions";
 import ArrowForwardRoundedIcon from "@material-ui/icons/ArrowForwardRounded";
@@ -21,15 +19,15 @@ import { useNavigate } from "react-router-dom";
 const slideImages = [
   {
     id: "i1",
-    url: "/static/media/louis.47608225783456b4c9f9.png",
+    url: mainBanner,
   },
   {
     id: "i2",
-    url: "/static/media/nike.ceb00524834295fa6bc4.jpg",
+    url: shoes,
   },
   {
     id: "i3",
-    url: "/static/media/sony.244ee40c95e86b035d63.jpg",
+    url: sony,
   },
 ];
 
@@ -50,12 +48,14 @@ const useStyles = makeStyles((theme) => ({
   poster: {
     width: "100%",
     minHeight: 0,
-    objectFit: "cover", 
-      maxHeight: "70vh",
-      [`@media screen and (max-width:899px)`]: {
-        maxHeight: '30vh',
-      },
-
+    objectFit: "fill",
+    maxHeight: "80vh",
+    [`@media screen and (max-width:899px)`]: {
+      maxHeight: "30vh",
+    },
+    // [`@media screen and (max-width:420px)`]: {
+    //   maxHeight: "40vh",
+    // },
   },
   heading: {
     margin: "2rem 0rem",
@@ -91,9 +91,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const DUMMY_DATA = [
-  { id: "b1", img: { louis }, category: "Men" },
-  { id: "b2", img: { louis }, category: "Women" },
-  { id: "b3", img: { louis }, category: "Electronics" },
+  { id: "b1", img: mensFashion, category: "Men" },
+  { id: "b2", img: womensFashion, category: "Women" },
+  { id: "b3", img: pcSetup, category: "Electronics" },
 ];
 const HomePage = () => {
   const [productData, setProductData] = useState([]);
@@ -108,26 +108,26 @@ const HomePage = () => {
     console.log(productData, "productsData");
   }, []);
 
-  console.log(louis);
   const classes = useStyles();
   return (
     <Grid className={classes.secDiv}>
-        <Fade>
-          {slideImages.map((item) => (
-            <img className={classes.poster} alt="carouselImg" key={item.id} src={item.url} />
-          ))}
-        </Fade>
+      <Fade>
+        {slideImages.map((item) => (
+          <img
+            className={classes.poster}
+            alt="carouselImg"
+            key={item.id}
+            src={item.url}
+          />
+        ))}
+      </Fade>
       <Box className={classes.greyDiv}></Box>
       <Typography className={classes.heading}>
         <CategoryOutlinedIcon fontSize="large" /> CATEGORIES
       </Typography>
       <Grid className={classes.mappedData}>
         {DUMMY_DATA.map((item) => (
-          <CategoryItem
-            key={item.id}
-            //  img={item.img}
-            category={item.category}
-          />
+          <CategoryItem key={item.id} img={item.img} category={item.category} />
         ))}
       </Grid>
       <Typography className={classes.heading}>
