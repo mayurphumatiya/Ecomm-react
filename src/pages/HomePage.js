@@ -3,6 +3,8 @@ import louis from "../assets/images/louis.png";
 import nike from "../assets/images/nike.jpg";
 import sony from "../assets/images/sony.jpg";
 import CategoryItem from "../components/CategoryItem";
+import { Fade } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
 import CategoryOutlinedIcon from "@material-ui/icons/CategoryOutlined";
 import {
   Grid,
@@ -15,7 +17,6 @@ import { fetchProductData } from "../store/Product-actions";
 import ArrowForwardRoundedIcon from "@material-ui/icons/ArrowForwardRounded";
 import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
 import { useNavigate } from "react-router-dom";
-import Carousel from "react-material-ui-carousel";
 
 const slideImages = [
   {
@@ -41,13 +42,6 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
     width: "100%",
   },
-  banner: {
-    width: "100%",
-    height: "70vh",
-    [`@media screen and (max-width:899px)`]: {
-      height: "40vh",
-    },
-  },
   greyDiv: {
     height: "2rem",
     width: "100%",
@@ -55,8 +49,13 @@ const useStyles = makeStyles((theme) => ({
   },
   poster: {
     width: "100%",
-    height: "100%",
-    objectFit: "cover",
+    minHeight: 0,
+    objectFit: "cover", 
+      maxHeight: "70vh",
+      [`@media screen and (max-width:899px)`]: {
+        maxHeight: '30vh',
+      },
+
   },
   heading: {
     margin: "2rem 0rem",
@@ -96,16 +95,6 @@ const DUMMY_DATA = [
   { id: "b2", img: { louis }, category: "Women" },
   { id: "b3", img: { louis }, category: "Electronics" },
 ];
-
-const Item = (img) => {
-  console.log(img);
-  return <img src={img.img} alt="carousel img" style={{ 
-    width: "100%",
-    height: "100%",
-    objectFit: "fill",
-  }} />;
-};
-
 const HomePage = () => {
   const [productData, setProductData] = useState([]);
   const navigate = useNavigate();
@@ -123,14 +112,11 @@ const HomePage = () => {
   const classes = useStyles();
   return (
     <Grid className={classes.secDiv}>
-      {/* <Grid className={classes.banner}> */}
-        <Carousel className={classes.banner}>
+        <Fade>
           {slideImages.map((item) => (
-            <Item className={classes.poster} key={item.id} img={item.url} />
+            <img className={classes.poster} alt="carouselImg" key={item.id} src={item.url} />
           ))}
-        </Carousel>
-        {/* <img src={louis} alt="poster" className={classes.poster} /> */}
-      {/* </Grid> */}
+        </Fade>
       <Box className={classes.greyDiv}></Box>
       <Typography className={classes.heading}>
         <CategoryOutlinedIcon fontSize="large" /> CATEGORIES

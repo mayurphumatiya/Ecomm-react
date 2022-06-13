@@ -5,7 +5,7 @@ import { Button, Grid, makeStyles, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme)=>({
   category : {
-    height: "80vh",
+    height: "90vh",
     width: "30vw",
     margin: "2rem 0.5rem",
     display: "flex",
