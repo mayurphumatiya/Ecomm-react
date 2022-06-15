@@ -10,6 +10,7 @@ import {
   Select,
   Typography,
 } from "@material-ui/core";
+import { ProductsData } from "../assets/JSON/ProductsData";
 
 const useStyles = makeStyles((theme) => ({
   secDiv: {
@@ -93,14 +94,14 @@ const Products = () => {
         </Select>
       </FormControl>
       <Grid className={classes.secDiv}>
-        {filteredList.map((item) => (
+        {ProductsData.map((item) => (
           <ProductItem
             key={item.id}
             price={item.price}
-            title={item.title}
-            description={item.description}
+            title={item.name}
+            // description={item.description}
             image={item.image}
-            rating={item.rating.rate}
+            // rating={item.rating.rate}
           />
         ))}
       </Grid>

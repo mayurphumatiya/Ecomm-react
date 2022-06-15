@@ -48,10 +48,12 @@ const useStyles = makeStyles((theme) => ({
   poster: {
     width: "100%",
     minHeight: 0,
+    height:"100%",
     objectFit: "fill",
     maxHeight: "80vh",
     [`@media screen and (max-width:899px)`]: {
       maxHeight: "30vh",
+      height:'100%',
     },
     // [`@media screen and (max-width:420px)`]: {
     //   maxHeight: "40vh",
