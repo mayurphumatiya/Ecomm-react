@@ -1,7 +1,7 @@
 export const ProductsData = [
     {
         "id": 1,
-        "price": 122,
+        "price": "$122",
         "name": "Levi's Men's 511 Regular fit Jeans ",
         "sizes": [
             28,
@@ -25,7 +25,7 @@ export const ProductsData = [
             "XL",
             "2XL"
         ],
-        "price": 16.76,
+        "price": "$16.76",
         "easyInfo": [
             "100% Premium Cotton, Pre-Washed for extremely soft finish and Rich look ",
             "Classic collar",
@@ -42,7 +42,7 @@ export const ProductsData = [
             "XXL-RF",
             "XL-RF"
         ],
-        "price": 18.41,
+        "price": "$18.41",
         "easyInfo": [
             "Made of 100% Cotton",
             "Collared Neck",
@@ -59,7 +59,7 @@ export const ProductsData = [
         "sizes": [
             "42-RF"
         ],
-        "price": 18.31,
+        "price": "$18.31",
         "easyInfo": [
             "Made of 67% Linen, 33% Cotton",
             "Collared Neck",
@@ -72,7 +72,7 @@ export const ProductsData = [
     {
         "id": 5,
         "name": "Levi's Men's Regular Jeans ",
-        "price": 222,
+        "price": "$222",
         "sizes": [
             28,
             30,
@@ -94,7 +94,7 @@ export const ProductsData = [
             "L",
             "XL"
         ],
-        "price": 65.12,
+        "price": "$65.12",
         "easyInfo": [
             "Full Sleeve",
             "Stripped Texture"
@@ -112,7 +112,7 @@ export const ProductsData = [
             "XL",
             "2XL"
         ],
-        "price": 124.99,
+        "price": "$124.99",
         "easyInfo": [
             "Fabric - 100% Cotton ",
             "Long sleeve Shirt  "
@@ -130,7 +130,7 @@ export const ProductsData = [
             "XL",
             "2XL"
         ],
-        "price": 7.88,
+        "price": "$7.88",
         "easyInfo": [
             "Fabric - 100% Cotton ",
             "Long sleeve Shirt  ",
@@ -150,7 +150,7 @@ export const ProductsData = [
             "XL",
             "2XL"
         ],
-        "price": 11.04,
+        "price": "$11.04",
         "easyInfo": [
             "Beautifully crafted in 100% Cotton, it comes in a convenient slim fit and is suitable for all body types",
             "Features spread collar, full sleeves with buttoned cuffs and double flap pockets at chest. Pattern- Solid Casual Shirt ",
@@ -162,7 +162,7 @@ export const ProductsData = [
     {
         "id": 10,
         "name": "Slim Men Black Jeans",
-        "price": 3.93,
+        "price": "$3.93",
         "sizes": [
             28,
             30,
@@ -184,7 +184,7 @@ export const ProductsData = [
             "L",
             "XL"
         ],
-        "price": 35.83,
+        "price": "$35.83",
         "easyInfo": [
             "Made of Pure Cotton",
             "Full Sleeve"
@@ -195,7 +195,7 @@ export const ProductsData = [
     {
         "id": 12,
         "name": "Lee Regular Men Blue Jeans",
-        "price": 26.96,
+        "price": "$26.96",
         "sizes": [
             28,
             30,
@@ -211,7 +211,7 @@ export const ProductsData = [
     {
         "id": 13,
         "name": "PUMA Graphic Men's Pants",
-        "price": 20.25,
+        "price": "$20.25",
         "sizes": [
             28,
             30,
@@ -227,7 +227,7 @@ export const ProductsData = [
     {
         "id": 14,
         "name": "Active Tricot Slim Fit Men's Sweat Pants",
-        "price": 19.72,
+        "price": "$19.72",
         "sizes": [
             28,
             30,
@@ -246,7 +246,7 @@ export const ProductsData = [
         "sizes": [
             "42-RF"
         ],
-        "price": 11.83,
+        "price": "$11.83",
         "easyInfo": [
             "Made of Poly Cotton",
             "Slim Fit",
@@ -259,7 +259,7 @@ export const ProductsData = [
     {
         "id": 16,
         "name": "Active Tricot Slim Fit Men's Sweat Pants",
-        "price": 19.72,
+        "price": "$19.72",
         "sizes": [
             28,
             30,
@@ -282,7 +282,7 @@ export const ProductsData = [
             "M",
             "S"
         ],
-        "price": 18.41,
+        "price": "$18.41",
         "easyInfo": [
             "Made of 100% Cotton",
             "Regular fit",
@@ -295,7 +295,7 @@ export const ProductsData = [
     {
         "id": 18,
         "name": "Mercedes F1 Essential Regular Fit Men's Pants",
-        "price": 52.62,
+        "price": "$52.62",
         "sizes": [
             28,
             30,
@@ -311,7 +311,7 @@ export const ProductsData = [
     {
         "id": 19,
         "name": "Scuderia Ferrari Men's Sweat Pants",
-        "price": 49.33,
+        "price": "$49.33",
         "sizes": [
             28,
             30,
@@ -327,7 +327,7 @@ export const ProductsData = [
     {
         "id": 20,
         "name": "BMW M Motorsport Knitted T7 Men's Slim SweatPants",
-        "price": 42.75,
+        "price": "$42.75",
         "sizes": [
             28,
             30,
@@ -350,7 +350,7 @@ export const ProductsData = [
             "XL",
             "2XL"
         ],
-        "price": 9.2,
+        "price":"$9.2",
         "easyInfo": [
             "100% Premium Cotton, Pre-Washed for extremely soft finish and Rich look ",
             "Classic collar",
@@ -363,7 +363,7 @@ export const ProductsData = [
     {
         "id": 22,
         "name": "PUMA x Virat Kohli Men's SweatPants",
-        "price": 32.88,
+        "price": "$32.88",
         "sizes": [
             28,
             30,
@@ -379,7 +379,7 @@ export const ProductsData = [
     {
         "id": 23,
         "name": "Rebel Men's Pants",
-        "price": 30.38,
+        "price": "$30.38",
         "sizes": [
             28,
             30,
@@ -400,7 +400,7 @@ export const ProductsData = [
             "L",
             "XL"
         ],
-        "price": 5.38,
+        "price": "$5.38",
         "easyInfo": [
             "Made of Pure Cotton",
             "Full Sleeve"

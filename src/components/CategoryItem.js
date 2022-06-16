@@ -42,7 +42,19 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
     textAlign: "center",
     fontSize: "1rem",
+    [`@media screen and (max-width:600px)`]:{
+      padding: "0.5rem 0.5rem",
+      width:'20vw',
+      fontSize: "0.5rem"
+    },
   },
+  bannerTxt:{
+    fontSize:'2rem',
+    fontWeight:'700',
+    [`@media screen and (max-width:600px)`]:{
+      fontSize:'1.5rem',
+    },
+  }
 }));
 
 const CategoryItem = (props) => {
@@ -52,7 +64,7 @@ const CategoryItem = (props) => {
       <Grid className={classes.category}>
         <img src={props.img} alt="Banner" className={classes.categoryImg} />
         <Grid className={classes.overlayCtn}>
-          <Typography style={{ fontSize: "2rem", fontWeight: "600" }}>
+          <Typography className={classes.bannerTxt}>
             {props.category}
           </Typography>
           <Button className={classes.categoryBtn}>Shop Now</Button>

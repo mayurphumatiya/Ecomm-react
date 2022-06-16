@@ -12,17 +12,24 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     height: "70vh",
-    width: "55vw",
     margin: "1rem 0.5rem",
     border:'0.5px solid #f5f5f5',
     "&:hover": {
-      boxShadow: "5px 5px 8px 8px #d3d3d3",
+      boxShadow: "5px 5px 8px 3px #d3d3d3",
     },
     [`@media screen and (min-width:1150px)`]: {
-      width: "45vh",
+      width: "23vw",
     },
-    [`@media screen and (max-width:625px)`]: {
-      width: "90%",
+    [`@media screen and (max-width:1150px)`]: {
+      width: "29vw",
+      height:'50vh',
+    },
+    [`@media screen and (max-width:768px)`]: {
+      width: "45vw",
+      height:'55vh'
+    },
+    [`@media screen and (max-width:550px)`]: {
+      width: "80%",
     },
   },
   imgDiv: {
