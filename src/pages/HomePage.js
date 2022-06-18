@@ -16,6 +16,7 @@ import ArrowForwardRoundedIcon from "@material-ui/icons/ArrowForwardRounded";
 import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
 import { useNavigate } from "react-router-dom";
 import { ProductsData } from "../assets/JSON/ProductsData";
+import WhatshotOutlinedIcon from '@material-ui/icons/WhatshotOutlined';
 import Himg from "../assets/images/Himg.png";
 import access from "../assets/images/access.png"
 
@@ -151,8 +152,8 @@ const useStyles = makeStyles((theme) => ({
   },
   categoryBtn: {
     padding: "0.725rem 1rem",
-    background: "#0d0d0d",
-    color: "#fff",
+    background: "#fff",
+    color: "#000",
     textAlign: "center",
     fontSize: "1rem",
     [`@media screen and (max-width:768px)`]:{
@@ -221,6 +222,7 @@ const HomePage = () => {
 
       <Box className={classes.greyDiv}></Box>
 
+        {/* CATEGORIES */}
       <Typography className={classes.heading}>
         <CategoryOutlinedIcon fontSize="large" /> CATEGORIES
       </Typography>
@@ -230,6 +232,8 @@ const HomePage = () => {
         ))}
       </Grid>
 
+
+        {/* H&M */}
       <Grid style={{ display: "flex", justifyContent: "center" }}>
         <img src={Himg} alt="logo" className={classes.logo} />
       </Grid>
@@ -267,17 +271,24 @@ const HomePage = () => {
         </Grid>
       </Grid>
 
+        {/* TRENDING */}
+      <Typography className={classes.heading}>
+            <WhatshotOutlinedIcon fontSize='large' />
+            TRENDING
+      </Typography>
 
+
+        {/* PRODUCTS */}
       <Typography className={classes.heading}>
         <LocalMallOutlinedIcon fontSize="large" />
         PRODUCTS
       </Typography>
       <Grid className={classes.mappedData}>
-        {ProductsData.slice(5, 9).map((item) => (
+        {productData.slice(12, 20).map((item) => (
           <ProductItem
             key={item.id}
             price={item.price}
-            title={item.name}
+            title={item.title}
             // description={item.description}
             image={item.image}
             // rating={item.rating.rate}
