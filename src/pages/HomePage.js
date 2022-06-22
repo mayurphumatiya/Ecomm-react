@@ -9,9 +9,12 @@ import mensFashion from "../assets/images/mensFashion.png";
 import womensFashion from "../assets/images/womensFashion.png";
 import "react-slideshow-image/dist/styles.css";
 import CategoryOutlinedIcon from "@material-ui/icons/CategoryOutlined";
+import { BsGenderMale } from 'react-icons/bs';
+import { BsGenderFemale } from 'react-icons/bs';
 import { Grid, Button, Box, makeStyles, Typography } from "@material-ui/core";
 import ProductItem from "../components/ProductItem";
 import { fetchProductData } from "../store/Product-actions";
+import { productDataLadies } from "../assets/JSON/productDataLadies";
 import ArrowForwardRoundedIcon from "@material-ui/icons/ArrowForwardRounded";
 import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
 import { useNavigate } from "react-router-dom";
@@ -19,6 +22,7 @@ import { ProductsData } from "../assets/JSON/ProductsData";
 import WhatshotOutlinedIcon from '@material-ui/icons/WhatshotOutlined';
 import Himg from "../assets/images/Himg.png";
 import access from "../assets/images/access.png"
+import SlideProducts from "../components/SlideProducts";
 
 
 const slideImages = [
@@ -79,6 +83,12 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     flexWrap: "wrap",
+    backgroundColor: "#f5f5f5",
+  },
+  slideData: {
+    display: "flex",
+    flexWrap:"wrap",
+    justifyContent: "center",
     backgroundColor: "#f5f5f5",
   },
 
@@ -173,7 +183,10 @@ const useStyles = makeStyles((theme) => ({
     [`@media screen and (max-width:768px)`]:{
       fontSize:'1.5rem',
     },
-  }
+  },
+  trendHeading:{
+    fontSize:"30px", fontWeight:'700', padding:'0.5rem 1rem',
+  },
 }));
 
 const DUMMY_DATA = [
@@ -276,6 +289,24 @@ const HomePage = () => {
             <WhatshotOutlinedIcon fontSize='large' />
             TRENDING
       </Typography>
+      <Grid style={{backgroundColor:'#f5f5f5'}}>
+      <Grid style={{display:'flex',flexDirection:'column'}}>
+            <Typography className={classes.trendHeading}><BsGenderMale/>Men's</Typography>
+            <Grid className={classes.slideData}>
+            {ProductsData.slice(5,9).map((trend)=>(
+              <SlideProducts key={trend.id} title={trend.name} price={trend.price} image={trend.image} rating={trend.rating} />
+            ))}
+            </Grid>
+      </Grid>
+      <Grid style={{display:'flex',flexDirection:'column'}}>
+            <Typography className={classes.trendHeading}><BsGenderFemale />Women's</Typography>
+            <Grid className={classes.slideData}>
+            {productDataLadies.slice(13,17).map((trend)=>(
+              <SlideProducts key={trend.articleCode} title={trend.title} price={trend.price} image={trend.image[0].src} rating={trend.rating} />
+            ))}
+            </Grid>
+      </Grid>
+      </Grid>
 
 
         {/* PRODUCTS */}
@@ -291,7 +322,7 @@ const HomePage = () => {
             title={item.title}
             // description={item.description}
             image={item.image}
-            // rating={item.rating.rate}
+            rating={item.rating.rate}
           />
         ))}
       </Grid>

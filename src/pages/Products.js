@@ -1,3 +1,5 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
 import { useEffect, useState, useMemo } from "react";
 import ProductItem from "../components/ProductItem";
 import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
@@ -94,14 +96,14 @@ const Products = () => {
         </Select>
       </FormControl>
       <Grid className={classes.secDiv}>
-        {ProductsData.map((item) => (
+        {data.map((item) => (
           <ProductItem
             key={item.id}
             price={item.price}
-            title={item.name}
+            title={item.title}
             // description={item.description}
             image={item.image}
-            // rating={item.rating.rate}
+            rating={item.rating.rate}
           />
         ))}
       </Grid>

@@ -52,8 +52,8 @@ const useStyles = makeStyles((theme) => ({
     // borderBottom: "1px solid #cecece",
   },
   productImg: {
-    width: "60%",
-    height: "70%",
+    width: "100%",
+    height: "100%",
     objectFit: "fill",
   },
   productDetails: {
@@ -122,7 +122,7 @@ const SlideProducts = (props) => {
         </Grid>
         <Grid className={classes.productDetails}>
           <Typography className={classes.productTitle}>
-            {props.title.slice(0,36)}
+            {props.title.slice(0,35)}
           </Typography>
           {/* <Typography className={classes.productDescription}>
             {props.description.slice(0, 90)}...
