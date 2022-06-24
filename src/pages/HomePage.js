@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CategoryItem from "../components/CategoryItem";
 import { Fade } from "react-slideshow-image";
-import sony from "../assets/images/sony.jpg";
-import shoes from "../assets/images/shoes.png";
-import mainBanner from "../assets/images/mainBanner.png";
-import pcSetup from "../assets/images/pcSetup.jpg";
-import mensFashion from "../assets/images/mensFashion.png";
-import womensFashion from "../assets/images/womensFashion.png";
 import "react-slideshow-image/dist/styles.css";
 import CategoryOutlinedIcon from "@material-ui/icons/CategoryOutlined";
 import { BsGenderMale } from 'react-icons/bs';
@@ -20,9 +14,15 @@ import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
 import { useNavigate } from "react-router-dom";
 import { ProductsData } from "../assets/JSON/ProductsData";
 import WhatshotOutlinedIcon from '@material-ui/icons/WhatshotOutlined';
-import Himg from "../assets/images/Himg.png";
-import access from "../assets/images/access.png"
 import SlideProducts from "../components/SlideProducts";
+import mensFashion from "../assets/images/mensFashion.webp";
+import womensFashion from "../assets/images/womensFashion.webp";
+import accessories from "../assets/images/accessories.webp";
+import pcSetup from "../assets/images/pcSetup.webp";
+import shoes from "../assets/images/shoes.webp";
+import Himg from "../assets/images/Himg.webp";
+import mainBanner from "../assets/images/mainBanner.webp";
+import sony from "../assets/images/sony.webp";
 
 
 const slideImages = [
@@ -280,7 +280,7 @@ const HomePage = () => {
           </Typography>
           <Button className={classes.categoryBtn}>Shop Now</Button>
         </Grid>
-          <img src={access} alt="img" className={classes.handimg}/>
+          <img src={accessories} alt="img" className={classes.handimg}/>
         </Grid>
       </Grid>
 

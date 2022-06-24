@@ -15,17 +15,17 @@ const useStyles = makeStyles((theme) => ({
   productItem: {
     display: "flex",
     flexDirection: "column",
-    width:'20vw',
+    width:'23vw',
     justifyContent:'space-between',
-    height: "70vh",
+    // height: "70vh",
     margin: "1rem 0.5rem",
     border:'0.5px solid #f5f5f5',
     "&:hover": {
       boxShadow: "5px 5px 8px 3px #d3d3d3",
     },
-    [`@media screen and (min-width:1150px)`]: {
-      width: "23vw",
-    },
+    // [`@media screen and (min-width:1150px)`]: {
+    //   width: "23vw",
+    // },
     [`@media screen and (max-width:1150px)`]: {
       width: "23vw",
       height:'60vh',
@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "15px",
     marginBottom: "5px",
     [`@media screen and (max-width:768px)`]: {
-      fontSize:'13px'
+      fontSize:'12px'
     },
   },
   productDescription: {

@@ -96,7 +96,7 @@ const Products = () => {
         </Select>
       </FormControl>
       <Grid className={classes.secDiv}>
-        {data.map((item) => (
+        {filteredList.map((item) => (
           <ProductItem
             key={item.id}
             price={item.price}
