@@ -19,6 +19,7 @@
 }
 
 .logo {
+  cursor:pointer;
   font-size: 2rem;
   /* width: 50%; */
   /* text-align:center; */
