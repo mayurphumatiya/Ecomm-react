@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     /* width:95%; */
   },
   heading: {
-    marginTop: "2rem",
+    paddingTop: "2rem",
     fontFamily: "Montserrat, sans-serif",
     fontSize: "2.5rem",
     fontWeight: "500",
