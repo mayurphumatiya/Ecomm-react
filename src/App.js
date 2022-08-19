@@ -5,6 +5,7 @@ import { Navbar } from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Products from "./pages/Products";
+import ProductInfo from "./pages/ProductInfo";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/productInfo" element={<ProductInfo />} />
       </Routes>
     </>
   );
