@@ -130,7 +130,7 @@ const useStyles = makeStyles((theme) => ({
     display:'flex',
     justifyContent:'center',
     height: "80vh",
-    width: "35vw",
+    width: "25vw",
     padding:'2rem 0rem',
     alignItems:'center',
     [`@media screen and (max-width:768px)`]:{
@@ -202,7 +202,7 @@ const HM = [
   },
   {
     id: "h2",
-    img: "//lp2.hm.com/hmgoepprod?set=source[/f9/55/f9551db98c64287d851ed7206750f24cc7a5cdba.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+    img: "//lp2.hm.com/hmgoepprod?set=source[/a4/a0/a4a0a901d2d270ddc532ca0083167c1ac7ebc4b3.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
     category: "Women",
   },
 ];
