@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import { useEffect, useState, useMemo } from "react";
 import ProductItem from "../components/ProductItem";
 import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
@@ -12,7 +11,6 @@ import {
   Select,
   Typography,
 } from "@material-ui/core";
-import { ProductsData } from "../assets/JSON/ProductsData";
 
 const useStyles = makeStyles((theme) => ({
   secDiv: {

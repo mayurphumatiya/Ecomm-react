@@ -7,7 +7,6 @@ import {
   Typography,
   useMediaQuery,
 } from "@material-ui/core";
-import StarIcon from "@material-ui/icons/Star";
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import { Rating } from "@material-ui/lab";
 
