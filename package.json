@@ -1,5 +1,6 @@
 {
   "name": "ecomm-app",
+  "homepage":"https://yayfashion.vercel.app/ecomm-app/",
   "version": "0.1.0",
   "engines": {
     "node": "14.18.1"
@@ -49,6 +50,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "homepage":"."
+  }
 }
